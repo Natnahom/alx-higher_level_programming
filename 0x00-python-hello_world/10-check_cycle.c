@@ -1,17 +1,17 @@
 #include "lists.h"
 
 /**
- * check_cycle - checks the cycle
- *
- * @list: integer list
- * Return: 0 or 1
+ * check_cycle - list
+ * @head:  type list
+ * Return: 0 if there is no cycle, 1 if there is a cycle
  */
-int check_cycle(listint_t *list)
+int check_cycle(listint_t *head)
 {
 	int *node1, *node2;
 
 	if (head == NULL)
 		return (0);
+
 	while (head != NULL)
 	{
 		node1 = (int *)&head;
@@ -19,7 +19,7 @@ int check_cycle(listint_t *list)
 		if (head->next == NULL)
 			return (0);
 
-		if (*node1 - *node2 <= )
+		if (*node1 - *node2 <= 0)
 			return (1);
 
 		head = head->next;
