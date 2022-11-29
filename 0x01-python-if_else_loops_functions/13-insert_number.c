@@ -17,11 +17,13 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		if (number < aux->n)
 			return (insert_nodeint_at_index(head, i, number));
+
 		i++;
 		aux = aux->next;
 	}
 	return (insert_nodeint_at_index(head, i, number));
 }
+
 /**
  * insert_nodeint_at_index - insert new node in the index possition
  * @head: linked list
