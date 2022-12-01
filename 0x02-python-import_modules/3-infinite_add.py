@@ -2,11 +2,10 @@
 if __name__ == "__main__":
     import sys
     num = len(sys.argv)
-    result = 0
-
-    if num > 1
+    sum = 0
+    if num > 1:
         for i in range(1, num):
-            result += sys.argv[i]
-        print(result)
+            sum += int(sys.argv[i])
+        print("{}".format(sum))
     else:
-        print(result)
+        print("{}".format(sum))
