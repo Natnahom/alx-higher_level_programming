@@ -1,1 +1,1 @@
-This project is more about classes and objects
+This project is more about classes and objects.
