@@ -3,10 +3,14 @@
 
 import sys
 import requests
-from request.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
-    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
-    r = request.get("https://developer.github.com/v3/repos/commits", auth=auth)
-    print(r.json().get("repository-name"))
-    print(r.json().get("name"))
+    url = ("https://developer.github.com/v3/repos/commits".format(sys.argv[2], sys.argv[1]))
+    r = requests.get(url)
+    commit = r.json()
+
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commit[i].get("sha"),
+                commit[i].get("commit").get("author").get("name")))
